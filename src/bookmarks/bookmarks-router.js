@@ -18,7 +18,6 @@ bookmarksRouter
     })
     .post(bodyParser, (req, res) => {
         for (const field of ['title', 'url', 'rating']) {
-            console.log(req.body);
             if (!req.body[field]) {
                 logger.error(`${field} is required`)
                 return res.status(400).send(`'${field}' is required`)
